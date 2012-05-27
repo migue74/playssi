@@ -1,0 +1,49 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Verdana;
+	font-size: 11px;
+	color: #333;
+}
+
+.wrapper {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.header {
+	height: 100px;
+	background: #ddd;
+}
+
+.menu {
+	width: 100%;
+	border-bottom: 1px solid #555;
+	background: #ddd;
+	margin-bottom: 20px;
+	padding-bottom: 30px;
+}
+
+.menu ul {
+	list-style-type: none;
+}
+
+.menu ul li a {
+	float: left;
+	display: block;
+	padding: 8px 20px;
+	margin-right: 5px;
+	background: #eee;
+	border-top: 1px solid #555;
+	border-left: 1px solid #555;
+	border-right: 1px solid #555;
+}
+
+.menu ul li a:hover {
+	background: #fff;
+
+	padding-bottom: 9px;
+}
