@@ -11,3 +11,9 @@
 			echo 'ERROR: ' . $e->GetMessage();
 		}
 	}
+	
+	function activeTab($p) {
+		global $pag;
+		if ($p == $pag)
+			return 'class="active"';
+	}
