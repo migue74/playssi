@@ -13,13 +13,22 @@
 		<meta http-equiv="content-language" content="es" />
 		<title>PlaySSI - Backend</title>
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-		<script src="js/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/stuff.js"></script>
+		<script type="text/javascript" src="js/jquery.color.js"></script>
 	</head>
 	<body>
 		<div class="header">
 			<div class="wrapper">
 				<div class="logo">
-					PlaySSI
+					<img src="img/logo.png" />
+				</div>
+				<div class="user" id="user">
+					<form name="login" method="post" action="login.php">
+						<img src="img/icons/vcard.png" /><input type="text" id="nif" name="nif" /><label id="label_nif" for="nif">NIF</label>
+						<img src="img/icons/key.png" /><input type="password" id="passwd" name="passwd" /><label id="label_passwd" for="passwd">Contraseña</label>
+						<input type="submit" value="Enviar" />
+					</form>
 				</div>
 			</div>
 			<div class="menu">
@@ -32,6 +41,13 @@
 					</ul>
 				</div>
 			</div>
+		</div>
+		<div class="alert-login">
+			<p>
+				<strong>Bienvenido a la web de administración de PlaySSI</strong><br/>
+				Por favor, inicie sesión para realizar cualquier gestión
+			</p>
+			<a href="#" id="alert-login">Iniciar sesión</a>
 		</div>
 		<div class="content">
 			<div class="wrapper">

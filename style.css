@@ -23,7 +23,7 @@ h1 {
 
 h1 img {
 	margin-right: 5px;
-	vertical-align: -2px;
+	vertical-align: -3px;
 }
 
 .wrapper {
@@ -33,17 +33,51 @@ h1 img {
 
 .header {
 	background: url('img/bg_header.jpg') no-repeat top center;
+	padding-top: 20px;
 }
 
 .logo {
-	height: 100px;
+	padding-bottom: 20px;
+	float: left;
+}
+
+.user {
+	float: right;
+	width: 280px;
+	height: 84px;
+	background: rgba(255, 255, 255, 0.5);
+	border: 1px solid #DBEFF6;
+	padding: 10px;
+}
+
+.user img {
+	vertical-align: -3px;
+	margin-right: 5px;
+}
+
+.user label {
+	position: absolute;
+	margin: 3px 0 0 -255px;
+	color: #CCC;
+	cursor: text;
+}
+
+.user input {
+	border: 1px solid #DBEFF6;
+	padding: 2px;
+	font-family: Verdana;
+	font-size: 11px;
+	margin-bottom: 10px;
+	position: relative;
+	width: 253px;
 }
 
 .menu {
 	width: 100%;
 	border-bottom: 1px solid #34AFDA;
-	margin-bottom: 20px;
+	margin-bottom: 25px;
 	padding-bottom: 30px;
+	clear: both;
 }
 
 .menu ul {
@@ -79,6 +113,42 @@ h1 img {
 
 .menu ul li a.active:hover {
 	color: #FF6000;
+}
+
+.alert-login {
+	background: url('img/alert_login.png');
+	width: 680px;
+	height: 83px;
+	margin: 0 auto;
+	margin-bottom: 25px;
+}
+
+.alert-login p {
+	float: left;
+	font-family: Arial;
+	font-size: 16px;
+	line-height: 25px;
+	margin: 12px 15px;
+}
+
+.alert-login a {
+	display: block;
+	font-family: Arial;
+	font-size: 14px;
+	color: #FFF;
+	text-decoration: none;
+	font-weight: bold;
+	background: #FF6000;
+	border: 1px solid #c64b00;
+	float: right;
+	text-transform: uppercase;
+	text-shadow: 0 -1px 1px #8d3500;
+	padding: 10px 20px;
+	margin: 20px 15px;
+}
+
+.alert-login a:hover {
+	box-shadow: 0 0 5px #FF6000;
 }
 
 .box {
