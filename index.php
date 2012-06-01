@@ -1,6 +1,8 @@
 <?php
 	include('inc/config.php');
 	include('inc/functions.php');
+	session_start();
+	
 	if (!isset($_GET['pag']))
 		$pag = 'home';
 	else
@@ -24,11 +26,15 @@
 					<img src="img/logo.png" />
 				</div>
 				<div class="user" id="user">
-					<form name="login" method="post" action="login.php">
+					<?php if (!isset($_SESSION['user'])) { ?>
+					<form id="login" method="post" action="login.php" accept-charset="utf-8">
 						<img src="img/icons/vcard.png" /><input type="text" id="nif" name="nif" /><label id="label_nif" for="nif">NIF</label>
 						<img src="img/icons/key.png" /><input type="password" id="passwd" name="passwd" /><label id="label_passwd" for="passwd">Contraseña</label>
 						<input type="submit" value="Enviar" />
 					</form>
+					<?php } else { ?>
+					Conectado como <strong><?php echo $_SESSION['user']; ?></strong>. <a href="logout.php">Cerrar sesión</a>
+					<?php } ?>
 				</div>
 			</div>
 			<div class="menu">
@@ -42,13 +48,24 @@
 				</div>
 			</div>
 		</div>
+		<?php if (!isset($_SESSION['user']) && !isset($_SESSION['error'])) { ?>
 		<div class="alert-login">
 			<p>
-				<strong>Bienvenido a la web de administración de PlaySSI</strong><br/>
-				Por favor, inicie sesión para realizar cualquier gestión
+				<strong>Bienvenido a la web de administración de PlaySSI.</strong><br/>
+				Por favor, inicie sesión para realizar cualquier gestión.
 			</p>
 			<a href="#" id="alert-login">Iniciar sesión</a>
 		</div>
+		<?php } else if (isset($_SESSION['error'])) { ?>
+		<div class="alert-login">
+			<img src="img/icons/alert_big.png" />
+			<p>
+				<strong>¡Ups! Los datos introducidos son incorrectos.</strong><br/>
+				Por favor, inténtelo de nuevo.
+			</p>
+			<a href="#" id="alert-login">Iniciar sesión</a>
+		</div>
+		<?php session_destroy(); } ?>
 		<div class="content">
 			<div class="wrapper">
 				<?php

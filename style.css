@@ -6,7 +6,7 @@
 body {
 	font-family: Verdana;
 	font-size: 11px;
-	color: #333;
+	color: #555;
 }
 
 h1 {
@@ -72,6 +72,34 @@ h1 img {
 	width: 253px;
 }
 
+.user input:focus {
+	border: 1px solid #34AFDA;
+}
+
+.user input[type=submit] {
+	font-family: Arial;
+	font-size: 11px;
+	color: #34AFDA;
+	text-decoration: none;
+	font-weight: bold;
+	background: #F1F8FB;
+	border: 1px solid #34AFDA;
+	float: right;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 1px #FFF;
+	padding: 3px 10px;
+	width: 100px;
+	cursor: pointer;
+}
+
+.user input[type=submit]:hover {
+	box-shadow: 0 0 3px #34AFDA;
+}
+
+.user input[type=submit]:active {
+	padding: 4px 10px 2px 10px;
+}
+
 .menu {
 	width: 100%;
 	border-bottom: 1px solid #34AFDA;
@@ -123,6 +151,11 @@ h1 img {
 	margin-bottom: 25px;
 }
 
+.alert-login img {
+	float: left;
+	margin: 13px 0 0 15px;
+}
+
 .alert-login p {
 	float: left;
 	font-family: Arial;
@@ -151,6 +184,10 @@ h1 img {
 	box-shadow: 0 0 5px #FF6000;
 }
 
+.alert-login a:active {
+	padding: 11px 20px 9px 20px;
+}
+
 .box {
 	float: left;
 	margin-bottom: 20px;
@@ -158,24 +195,96 @@ h1 img {
 
 .box .line {
 	border-bottom: 1px solid #34AFDA;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 
 .box h2 {
 	font-weight: bold;
 	font-family: Arial;
-	font-size: 11px;
+	font-size: 12px;
 	text-transform: uppercase;
 	color: #34AFDA;
-	margin-bottom: -7px;
+	margin-bottom: -8px;
 	background: #FFF;
 	display: inline-block;
 	padding-right: 5px;
 }
 
+.box h3 {
+	font-weight: bold;
+	font-family: Arial;
+	font-size: 16px;
+	text-transform: uppercase;
+	clear: both;
+}
+
+.box a {
+	color: #555;
+	text-decoration: none;
+}
+
+.box a.image {
+	float: left;
+	margin-right: 10px;
+	width: 180px;
+	height: 180px;
+	border: 1px solid #DBEFF6;
+	padding: 10px;
+	display: block;
+}
+
+.box a.image img {
+	margin: 0 auto;
+	display: block;
+}
+
+.box a.image:hover {
+	border: 1px solid #34AFDA;
+}
+
+.box h3, .box .editor {
+	text-align: left;
+	margin-top: 10px;
+}
+
+.box .editor {
+	color: #999;
+	text-transform: uppercase;
+	font-family: Arial;
+}
+
+.box .numbox {
+	border: 1px solid #34AFDA;
+	width: 85px;
+	height: 50px;
+	float: right;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 23px;
+}
+
+.box .numbox:last-child {
+	margin-bottom: 10px;
+}
+
+.box .numbox h4 {
+	font-family: Arial;
+	font-size: 11px;
+	background: #34AFDA;
+	color: #FFF;
+	padding: 1px 0;
+}
+
+.box .numbox span {
+	line-height: 35px;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+}
+
 .box3 {
-	width: 306px;
-	margin-right: 21px;
+	width: 300px;
+	margin-right: 30px;
 }
 
 .box3:last-child {

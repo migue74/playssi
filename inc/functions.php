@@ -17,3 +17,7 @@
 		if ($p == $pag)
 			return 'class="active"';
 	}
+	
+	function fNum($n, $d = 2) {
+		return number_format($n, $d, ',', '.');
+	}
