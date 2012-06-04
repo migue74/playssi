@@ -18,6 +18,7 @@
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/stuff.js"></script>
 		<script type="text/javascript" src="js/jquery.color.js"></script>
+		<script type="text/javascript" src="js/jquery-textFill-0.1.js"></script>
 	</head>
 	<body>
 		<div class="header">
@@ -32,18 +33,35 @@
 						<img src="img/icons/key.png" /><input type="password" id="passwd" name="passwd" /><label id="label_passwd" for="passwd">Contraseña</label>
 						<input type="submit" value="Enviar" />
 					</form>
-					<?php } else { ?>
-					Conectado como <strong><?php echo $_SESSION['user']; ?></strong>. <a href="logout.php">Cerrar sesión</a>
-					<?php } ?>
+					<?php } else {
+						echo '<div class="info">
+								<img src="img/icons/user.png" /><strong>' . $_SESSION['user']['nombre'] . '</strong>
+								<ul>
+									<li><strong>Nivel:</strong> ' . $_SESSION['user']['nivel'] . '</li>';
+						$sql = "SELECT NVL(SUM(f.total), 0) AS sumfact, COUNT(f.id) AS numfact, NVL(AVG(f.total), 0) AS media
+								FROM empleados e, facturas f
+								WHERE e.id = f.id_empleado
+								AND e.id = {$_SESSION['user']['id']}";
+						$query = query($sql);
+						foreach ($query as $row) {
+							echo '<li><strong>Ingresos:</strong> ' . $row['SUMFACT'] . ' €</li>
+									<li><strong>Facturas:</strong> ' . $row['NUMFACT'] . '</li>
+									<li><strong>Media:</strong> ' . $row['MEDIA'] . ' €</li>
+								</ul>
+							</div>
+							<a class="logout" href="logout.php"><img src="img/icons/door_in.png" />Cerrar sesión</a>';
+						}
+					} ?>
 				</div>
 			</div>
 			<div class="menu">
 				<div class="wrapper">
 					<ul>
 						<li><a href="./" <?php echo activeTab('home'); ?>>Inicio</a></li>
-						<li><a href="?pag=clientes" <?php echo activeTab('clientes'); ?>>Clientes</a></li>
 						<li><a href="?pag=productos" <?php echo activeTab('productos'); ?>>Productos</a></li>
 						<li><a href="?pag=ventas" <?php echo activeTab('ventas'); ?>>Ventas</a></li>
+						<li><a href="?pag=clientes" <?php echo activeTab('clientes'); ?>>Clientes</a></li>
+						<li><a href="?pag=empleados" <?php echo activeTab('empleados'); ?>>Empleados</a></li>
 					</ul>
 				</div>
 			</div>
@@ -70,14 +88,17 @@
 			<div class="wrapper">
 				<?php
 					switch($pag) {
-						case 'clientes':
-							include('pag/clientes.php');
-							break;
 						case 'productos':
 							include('pag/productos.php');
 							break;
 						case 'ventas':
 							include('pag/ventas.php');
+							break;
+						case 'clientes':
+							include('pag/clientes.php');
+							break;
+						case 'empleados':
+							include('pag/empleados.php');
 							break;
 						default:
 							include('pag/home.php');

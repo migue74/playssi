@@ -13,7 +13,9 @@
 			if ($nif == $row['NIF'] && $passwd == $row['PASSWD']) {
 				$login = true;
 				session_start();
-				$_SESSION['user'] = $row['NOMBRE'];
+				$_SESSION['user']['id'] = $row['ID'];
+				$_SESSION['user']['nombre'] = $row['NOMBRE'];
+				$_SESSION['user']['nivel'] = $row['NIVEL'];
 			}
 		}
 		

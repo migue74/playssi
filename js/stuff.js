@@ -58,5 +58,7 @@ $(document).ready(function() {
 			return true;  
 		else
 			return false;
-	});  
+	}); 
+	
+	$('.numbox').textfill({ maxFontPixels: 18 });
 });

@@ -100,6 +100,29 @@ h1 img {
 	padding: 4px 10px 2px 10px;
 }
 
+.user .info {
+	float: left;
+}
+
+.user .info ul {
+	list-style-type: square;
+	margin: 5px 0 0 12px;
+}
+
+.user .info ul li {
+	margin-bottom: 4px;
+}
+
+.user a.logout {
+	float: right;
+	text-decoration: none;
+	color: #34AFDA;
+}
+
+.user a.logout:hover {
+	text-decoration: underline;
+}
+
 .menu {
 	width: 100%;
 	border-bottom: 1px solid #34AFDA;
@@ -190,7 +213,7 @@ h1 img {
 
 .box {
 	float: left;
-	margin-bottom: 20px;
+	margin-bottom: 50px;
 }
 
 .box .line {
@@ -223,6 +246,10 @@ h1 img {
 	text-decoration: none;
 }
 
+.box a:hover {
+	color: #34AFDA;
+}
+
 .box a.image {
 	float: left;
 	margin-right: 10px;
@@ -233,21 +260,23 @@ h1 img {
 	display: block;
 }
 
+.box a.image:hover {
+	border: 1px solid #34AFDA;
+}
+
 .box a.image img {
 	margin: 0 auto;
 	display: block;
 }
 
-.box a.image:hover {
-	border: 1px solid #34AFDA;
+.box a.image .imagebox {
+	width: 180px;
+	height: 140px;
+	display: block;
+	margin-bottom: 10px;
 }
 
-.box h3, .box .editor {
-	text-align: left;
-	margin-top: 10px;
-}
-
-.box .editor {
+.box a .editor {
 	color: #999;
 	text-transform: uppercase;
 	font-family: Arial;
@@ -257,14 +286,28 @@ h1 img {
 	border: 1px solid #34AFDA;
 	width: 85px;
 	height: 50px;
-	float: right;
 	text-align: center;
 	text-transform: uppercase;
-	margin-bottom: 23px;
+	font-size: 18px;
 }
 
-.box .numbox:last-child {
+.box .vert .numbox {
+	margin-bottom: 23px;
+	float: right;
+}
+
+.box .vert .numbox:last-child {
+	margin-bottom: 0;
+}
+
+.box .horiz .numbox {
+	margin-right: 19px;
 	margin-bottom: 10px;
+	float: left;
+}
+
+.box .horiz .numbox:last-child {
+	margin-right: 0;
 }
 
 .box .numbox h4 {
@@ -278,8 +321,30 @@ h1 img {
 .box .numbox span {
 	line-height: 35px;
 	font-family: Arial;
-	font-size: 18px;
 	font-weight: bold;
+	padding: 5px;
+}
+
+.box table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.box table tr {
+	background: rgba(241, 248, 251, 0.5);
+}
+
+.box table tr:nth-child(odd) {
+	background: #F1F8FB;
+}
+
+.box table td, .box table th {
+	padding: 5px;
+	border: 1px solid #FFF;
+}
+
+.box table th {
+	background: #DBEFF6;
 }
 
 .box3 {
@@ -287,6 +352,6 @@ h1 img {
 	margin-right: 30px;
 }
 
-.box3:last-child {
+.box3:nth-child(3n+3) {
 	margin-right: 0;
 }
