@@ -23,15 +23,15 @@
 					<div class="vert">
 						<div class="numbox">
 							<h4>Precio</h4>
-							<span>' . formatnum($row['PRECIO']) . '</span>
+							<span>' . $row['PRECIO'] . '</span>
 							</div>
 						<div class="numbox">
 							<h4>Cantidad</h4>
-							<span>' . formatnum($row['SUMCANT'], 0) . '</span>
+							<span>' . $row['SUMCANT'] . '</span>
 							</div>
 						<div class="numbox">
 							<h4>Ingresos</h4>
-							<span>' . formatnum($row['TOTAL']) . '</span>
+							<span>' . $row['TOTAL'] . '</span>
 						</div>
 					</div>';
 			}
@@ -60,15 +60,15 @@
 					<div class="vert">
 						<div class="numbox">
 							<h4>Precio</h4>
-							<span>' . formatnum($row['PRECIO']) . '</span>
+							<span>' . $row['PRECIO'] . '</span>
 							</div>
 						<div class="numbox">
 							<h4>Cantidad</h4>
-							<span>' . formatnum($row['SUMCANT'], 0) . '</span>
+							<span>' . $row['SUMCANT'] . '</span>
 							</div>
 						<div class="numbox">
 							<h4>Ingresos</h4>
-							<span>' . formatnum($row['TOTAL']) . '</span>
+							<span>' . $row['TOTAL'] . '</span>
 						</div>
 					</div>';
 			}
@@ -94,11 +94,11 @@
 					<div class="vert">
 						<div class="numbox">
 							<h4>Precio</h4>
-							<span>' . formatnum($row['CANTIDAD']) . '</span>
+							<span>' . $row['CANTIDAD'] . '</span>
 						</div>
 						<div class="numbox">
 							<h4>Pujas</h4>
-							<span>' . formatnum($row['NUMPUJAS'], 0) . '</span>
+							<span>' . $row['NUMPUJAS'] . '</span>
 						</div>
 						<div class="numbox">
 							<h4>Fecha</h4>
@@ -125,15 +125,15 @@
 				echo '<div class="horiz">
 						<div class="numbox">
 							<h4>Ingresos</h4>
-							<span>' . formatnum($row['SUMFACT']) . '</span>
+							<span>' . $row['SUMFACT'] . '</span>
 						</div>
 						<div class="numbox">
 							<h4>Facturas</h4>
-							<span>' . formatnum($row['NUMFACT'], 0) . '</span>
+							<span>' . $row['NUMFACT'] . '</span>
 						</div>
 						<div class="numbox">
 							<h4>Media</h4>
-							<span>' . formatnum($row['MEDIA']) . '</span>
+							<span>' . $row['MEDIA'] . '</span>
 						</div>
 					</div>
 					<a href="?pag=empleados&id=' . $row['ID'] . '">
@@ -160,15 +160,15 @@
 				echo '<div class="horiz">
 						<div class="numbox">
 							<h4>Gastos</h4>
-							<span>' . formatnum($row['SUMFACT']) . '</span>
+							<span>' . $row['SUMFACT'] . '</span>
 						</div>
 						<div class="numbox">
 							<h4>Facturas</h4>
-							<span>' . formatnum($row['NUMFACT'], 0) . '</span>
+							<span>' . $row['NUMFACT'] . '</span>
 						</div>
 						<div class="numbox">
 							<h4>Media</h4>
-							<span>' . formatnum($row['MEDIA']) . '</span>
+							<span>' . $row['MEDIA'] . '</span>
 						</div>
 					</div>
 					<a href="?pag=clientes&id=' . $row['ID'] . '">
@@ -197,11 +197,11 @@
 				echo '<div class="horiz">
 						<div class="numbox">
 							<h4>Total</h4>
-							<span>' . formatnum($row['TOTAL']) . '</span>
+							<span>' . $row['TOTAL'] . '</span>
 						</div>
 						<div class="numbox">
 							<h4>Productos</h4>
-							<span>' . formatnum($row['NUMPROD'], 0) . '</span>
+							<span>' . $row['NUMPROD'] . '</span>
 						</div>
 						<div class="numbox">
 							<h4>Fecha</h4>
