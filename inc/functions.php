@@ -19,7 +19,10 @@
 	}
 	
 	function formatdate($f, $h = false, $t = 1) {
-		$f = date_create_from_format('j/n/y H:i:s:u', $f);
-		$res = date_format($f, 'j M Y'));
-		return $res;
+		$mes = Array('Jan' => 'Ene', 'Apr' => 'Abr', 'Aug' => 'Aug', 'Dec', 'Dic');
+		$res = date_create_from_format('d/m/y H:i:s,u', $f);
+		$res = date_format($res, 'j M Y');
+		$res = explode(' ', $res);
+		$res[1] = $mes[$res[1]];
+		return implode(' ', $res);
 	}
