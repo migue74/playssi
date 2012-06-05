@@ -102,7 +102,7 @@
 						</div>
 						<div class="numbox">
 							<h4>Fecha</h4>
-							<span>' . formatdate($row['FECHA_FIN']) . '</span>
+							<span>' . fdate($row['FECHA_FIN']) . '</span>
 						</div>
 					</div>';
 			}
@@ -205,7 +205,7 @@
 						</div>
 						<div class="numbox">
 							<h4>Fecha</h4>
-							<span>' . formatdate($row['FECHA']) . '</span>
+							<span>' . fdate($row['FECHA']) . '</span>
 						</div>
 					</div>
 					<a href="?pag=ventas&id=' . $row['ID'] . '">

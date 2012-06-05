@@ -26,6 +26,16 @@ h1 img {
 	vertical-align: -3px;
 }
 
+h1 a.add {
+	float: right;
+	color: #34AFDA;
+	text-decoration: none;
+}
+
+h1 a.add:hover {
+	text-decoration: underline;
+}
+
 .wrapper {
 	width: 960px;
 	margin: 0 auto;
@@ -62,21 +72,18 @@ h1 img {
 	cursor: text;
 }
 
-.user input {
+input, select {
 	border: 1px solid #DBEFF6;
 	padding: 2px;
 	font-family: Verdana;
 	font-size: 11px;
-	margin-bottom: 10px;
-	position: relative;
-	width: 253px;
 }
 
-.user input:focus {
+input:focus, select:focus {
 	border: 1px solid #34AFDA;
 }
 
-.user input[type=submit] {
+input[type=submit] {
 	font-family: Arial;
 	font-size: 11px;
 	color: #34AFDA;
@@ -84,20 +91,28 @@ h1 img {
 	font-weight: bold;
 	background: #F1F8FB;
 	border: 1px solid #34AFDA;
-	float: right;
 	text-transform: uppercase;
 	text-shadow: 1px 1px 1px #FFF;
 	padding: 3px 10px;
-	width: 100px;
 	cursor: pointer;
 }
 
-.user input[type=submit]:hover {
+input[type=submit]:hover {
 	box-shadow: 0 0 3px #34AFDA;
 }
 
-.user input[type=submit]:active {
+input[type=submit]:active {
 	padding: 4px 10px 2px 10px;
+}
+
+.user input {
+	margin-bottom: 10px;
+	width: 253px;
+}
+
+.user input[type=submit] {
+	float: right;
+	width: 100px;
 }
 
 .user .info {
@@ -354,4 +369,51 @@ h1 img {
 
 .box3:nth-child(3n+3) {
 	margin-right: 0;
+}
+
+.addproduct {
+	display: inline;
+	border: 1px solid #34AFDA;
+	margin-bottom: 30px;
+	padding: 10px;
+	width: 938px;
+}
+
+.addproduct legend {
+	font-family: Arial;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #34AFDA;
+	padding: 0 5px;
+}
+
+.addproduct input {
+	width: 300px;
+	margin-right: 40px;
+}
+
+.addproduct select {
+	margin-right: 40px;
+}
+
+.addproduct input.number {
+	width: 75px;
+	text-align: right;
+}
+
+.addproduct .optional {
+	margin-top: 10px;
+	float: left;
+}
+
+.addproduct input[type=submit] {
+	width: 100px;
+	float: right;
+	margin-right: 0;
+	margin-top: 10px;
+}
+
+.addproduct input[type=checkbox] {
+	margin: 0 0 0 -40px;
+	width: 20px;
 }

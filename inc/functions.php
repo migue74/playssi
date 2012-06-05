@@ -18,8 +18,8 @@
 			return 'class="active"';
 	}
 	
-	function formatdate($f, $h = false, $t = 1) {
-		$mes = Array('Jan' => 'Ene', 'Apr' => 'Abr', 'Aug' => 'Aug', 'Dec' => 'Dic');
+	function fdate($f, $h = false, $t = 1) {
+		$mes = Array('Jan' => 'Ene', 'Apr' => 'Abr', 'Aug' => 'Ago', 'Dec' => 'Dic');
 		$res = date_create_from_format('d/m/y H:i:s,u', $f);
 		$res = date_format($res, 'j M Y');
 		$res = explode(' ', $res);
