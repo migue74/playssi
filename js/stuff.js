@@ -62,8 +62,11 @@ $(document).ready(function() {
 	
 	$('.numbox').textfill({ maxFontPixels: 18 });
 	
-	$('.add a').click(function() {
-		$('.addproduct').css('display', 'inline')
+	$('a.add').click(function() {
+		if ($('.addproduct').css('display') == 'none')
+			$('.addproduct').slideToggle(500);
+		else
+			$('.addproduct').slideToggle(500);
 	});
 	
 	$('#tipo').change(function() {
@@ -86,7 +89,7 @@ $(document).ready(function() {
 		$('#editor select').css('display', 'none');
 		if ($(this).is(':checked')) {
 			$('#editor select').attr('name', 'old_editor');
-			$('#editor').append('<input type="text name="editor" style="width: 100px" />');
+			$('#editor').append('<input type="text" name="editor" style="width: 100px" />');
 		} else {
 			$('#editor input').remove();
 			$('#editor select').attr('name', 'editor');

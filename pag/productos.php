@@ -3,28 +3,35 @@
 		$nivel = false;
 	else
 		$nivel = $_SESSION['user']['nivel'];
+		
+	if (isset($_SESSION['add'])) {
+		echo '<div class="ok"><img src="img/icons/accept.png" />Producto añadido</div>';
+		unset($_SESSION['add']);
+	}
 ?>
 <h1><img src="img/icons/box.png" />Productos <?php if ($nivel == 'Jefe' || $nivel == 'Director') { echo '<a class="add" href="#"><img src="img/icons/add.png" />Añadir producto</a>'; ?></h1>
 <fieldset class="addproduct">
 	<legend>Añadir producto</legend>
 	<form method="post" action="act/product_add.php">
-		<label for="nombre">Nombre:</label> <input type="text" name="nombre" maxlength="50" />
-		<label for="precio">Precio:</label> <input type="text" name="precio" class="number" />
-		<label for="editor">Editor:</label> <span id="editor"><select name="editor">
-				<?php
-					$sql = "SELECT id, nombre FROM editores ORDER BY nombre ASC";
-					$query = query($sql);
-					foreach ($query as $row) {
-						echo '<option value="' . $row['ID'] . '">' . $row['NOMBRE'] . '</option>';
-					}
-				?>
-			</select></span>
-		<input id="checknew" type="checkbox" name="neweditor" />Nuevo
-		<label for="tipo" style="margin: 0 0 0 40px">Tipo:</label> <select name="tipo" id="tipo" style="margin: 0">
-				<option>Juego</option>
-				<option>Consola</option>
-				<option>Accesorio</option>
-			</select>
+		<div class="fixed">
+			<label for="nombre">Nombre:</label> <input type="text" name="nombre" maxlength="50" />
+			<label for="precio">Precio:</label> <input type="text" name="precio" class="number" />
+			<label for="editor">Editor:</label> <span id="editor"><select name="editor" style="width: 106px">
+					<?php
+						$sql = "SELECT id, nombre FROM editores ORDER BY nombre ASC";
+						$query = query($sql);
+						foreach ($query as $row) {
+							echo '<option value="' . $row['ID'] . '">' . $row['NOMBRE'] . '</option>';
+						}
+					?>
+				</select></span>
+			<input id="checknew" type="checkbox" name="neweditor" /><label for="checknew">Nuevo</label>
+			<div class="tipo"><label for="tipo">Tipo:</label> <select name="tipo" id="tipo" style="margin: 0">
+					<option>Juego</option>
+					<option>Consola</option>
+					<option>Accesorio</option>
+				</select></div>
+		</div>
 		<div class="optional">
 			<label for="plataforma">Plataforma:</label> <select name="plataforma" id="plataforma">
 							<option>PC</option>

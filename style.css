@@ -18,7 +18,7 @@ h1 {
 	text-transform: uppercase;
 	text-shadow: 1px 1px 1px #FFF;
 	color: #34AFDA;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 
 h1 img {
@@ -141,7 +141,7 @@ input[type=submit]:active {
 .menu {
 	width: 100%;
 	border-bottom: 1px solid #34AFDA;
-	margin-bottom: 25px;
+	margin-bottom: 30px;
 	padding-bottom: 30px;
 	clear: both;
 }
@@ -186,7 +186,7 @@ input[type=submit]:active {
 	width: 680px;
 	height: 83px;
 	margin: 0 auto;
-	margin-bottom: 25px;
+	margin-bottom: 30px;
 }
 
 .alert-login img {
@@ -372,7 +372,7 @@ input[type=submit]:active {
 }
 
 .addproduct {
-	display: inline;
+	display: none;
 	border: 1px solid #34AFDA;
 	margin-bottom: 30px;
 	padding: 10px;
@@ -387,18 +387,22 @@ input[type=submit]:active {
 	padding: 0 5px;
 }
 
-.addproduct input {
-	width: 300px;
+.addproduct input, .addproduct select {
 	margin-right: 40px;
 }
 
-.addproduct select {
-	margin-right: 40px;
+.addproduct input {
+	width: 300px;
+	height: 15px;
 }
 
 .addproduct input.number {
 	width: 75px;
 	text-align: right;
+}
+
+.addproduct .fixed {
+	height: 30px;
 }
 
 .addproduct .optional {
@@ -411,9 +415,32 @@ input[type=submit]:active {
 	float: right;
 	margin-right: 0;
 	margin-top: 10px;
+	height: auto;
 }
 
 .addproduct input[type=checkbox] {
 	margin: 0 0 0 -40px;
 	width: 20px;
+	vertical-align: -2px;
+}
+
+.addproduct .tipo {
+	float: right;
+}
+
+.ok {
+	background: #CBFF87;
+	width: 940px;
+	padding: 10px;
+	color: #488000;
+	margin-bottom: 30px;
+	font-family: Arial;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 1px #FFF;
+}
+
+.ok img {
+	vertical-align: -3px;
+	margin-right: 5px;
 }

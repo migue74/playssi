@@ -32,17 +32,18 @@
 		} else
 			$sql = "INSERT INTO productos (id, nombre, precio, fecha, tipo, stock, id_editor)
 					VALUES (sec_productos.NEXTVAL, '$nombre', '$precio', CURRENT_TIMESTAMP, '$tipo', 10, $editor)";
-				
+		
 		try {
 			$conex = new PDO($host, $username, $password);
 			$conex->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			if ($newed) $stmt = $conex->query($sql1);
 			$stmt = $conex->query($sql);
 			$stmt = $conex->query($sql2);
-			$conex->commit();
 			$conex = null;
 		} catch (PDOException $e) {
 			echo 'ERROR: ' . $e->GetMessage();
 		}
+		session_start();
+		$_SESSION['add'] = true;
 		header('Location: ../index.php?pag=productos');
 	}
