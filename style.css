@@ -26,6 +26,11 @@ h1 img {
 	vertical-align: -3px;
 }
 
+h1 img.sep {
+	margin: -12px 5px -14px 5px;
+	vertical-align: 0;
+}
+
 h1 a.add {
 	float: right;
 	color: #34AFDA;
@@ -340,26 +345,34 @@ input[type=submit]:active {
 	padding: 5px;
 }
 
-.box table {
+table {
 	border-collapse: collapse;
 	width: 100%;
 }
 
-.box table tr {
+table tr {
 	background: rgba(241, 248, 251, 0.5);
 }
 
-.box table tr:nth-child(odd) {
+table tr:nth-child(odd) {
 	background: #F1F8FB;
 }
 
-.box table td, .box table th {
+table td, table th {
 	padding: 5px;
 	border: 1px solid #FFF;
 }
 
-.box table th {
+table th {
 	background: #DBEFF6;
+}
+
+table a {
+	color: #34AFDA !important;
+}
+
+table a:hover {
+	text-decoration: underline;
 }
 
 .box3 {
@@ -373,8 +386,11 @@ input[type=submit]:active {
 
 .addproduct {
 	display: none;
-	border: 1px solid #34AFDA;
 	margin-bottom: 30px;
+}
+
+.addproduct fieldset {
+	border: 1px solid #34AFDA;
 	padding: 10px;
 	width: 938px;
 }
@@ -403,6 +419,11 @@ input[type=submit]:active {
 
 .addproduct .fixed {
 	height: 30px;
+}
+
+.addproduct .upimage input {
+	height: 20px;
+	width: 200px;
 }
 
 .addproduct .optional {

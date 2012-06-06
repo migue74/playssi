@@ -46,7 +46,7 @@
 						foreach ($query as $row) {
 							echo '<li><strong>Ingresos:</strong> ' . $row['SUMFACT'] . ' €</li>
 									<li><strong>Facturas:</strong> ' . $row['NUMFACT'] . '</li>
-									<li><strong>Media:</strong> ' . $row['MEDIA'] . ' €</li>
+									<li><strong>Media:</strong> ' . fnum($row['MEDIA']) . ' €</li>
 								</ul>
 							</div>
 							<a class="logout" href="logout.php"><img src="img/icons/door_in.png" />Cerrar sesión</a>';

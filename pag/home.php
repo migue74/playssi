@@ -133,7 +133,7 @@
 						</div>
 						<div class="numbox">
 							<h4>Media</h4>
-							<span>' . $row['MEDIA'] . '</span>
+							<span>' . fnum($row['MEDIA']) . '</span>
 						</div>
 					</div>
 					<a href="?pag=empleados&id=' . $row['ID'] . '">
@@ -168,7 +168,7 @@
 						</div>
 						<div class="numbox">
 							<h4>Media</h4>
-							<span>' . $row['MEDIA'] . '</span>
+							<span>' . fnum($row['MEDIA']) . '</span>
 						</div>
 					</div>
 					<a href="?pag=clientes&id=' . $row['ID'] . '">

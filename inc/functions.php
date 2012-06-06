@@ -27,3 +27,8 @@
 			$res[1] = $mes[$res[1]];
 		return implode(' ', $res);
 	}
+	
+	function fnum($n) {
+		$n = str_replace(',', '.', $n);
+		return number_format($n, 2, ',', '.');
+	}
