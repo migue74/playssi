@@ -62,27 +62,22 @@ $(document).ready(function() {
 	
 	$('.numbox').textfill({ maxFontPixels: 18 });
 	
-	$('a.add').click(function() {
-		if ($('.addproduct').css('display') == 'none')
-			$('.addproduct').slideToggle(500);
+	$('a.action').click(function() {
+		if ($('.prodaction').css('display') == 'none')
+			$('.prodaction').slideToggle(500);
 		else
-			$('.addproduct').slideToggle(500);
+			$('.prodaction').slideToggle(500);
 	});
 	
 	$('#tipo').change(function() {
 		$('.optional').empty();
-		if (this.value == 'Consola') {
-			$('.optional').append('<label for="capacidad">Capacidad:</label> <input type="text" name="capacidad" class="number" />');
-		} else if (this.value == 'Accesorio') {
-			$('.optional').append('<label for="tipoacc">Tipo de accesorio:</label> <select name="tipoacc"><option>Mando</option><option>Volante</option><option>Funda</option><option>Auriculares</option><option>Memoria</option><option>Cable</option><option>Otros</option></select>');
-		} else if (this.value == 'Juego') {
-			$.ajax({
-				url: "inc/tipo_consola.php",
-				success: function(html) {
-					$('.optional').append(html);
-				}
-			});
-		}
+		$.ajax({
+			url: "inc/productos/tipo.php",
+			data:"tipo=" + this.value,
+			success: function(html) {
+				$('.optional').append(html);
+			}
+		});
 	});
 	
 	$('#checknew').change(function() {
@@ -95,5 +90,13 @@ $(document).ready(function() {
 			$('#editor select').attr('name', 'editor');
 			$('#editor select').css('display', 'inline');
 		}
+	});
+	
+	$('#checkurl').change(function() {
+		$('.upimage').empty();
+		if ($(this).is(':checked'))
+			$('.upimage').append('Imagen: <input type="text" name="imagen" id="urlimg" />');
+		else
+			$('.upimage').append('Imagen: <input type="file" name="imagen" id="imagen" />');
 	});
 });

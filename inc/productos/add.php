@@ -1,19 +1,8 @@
-<?php
-	if (!isset($_SESSION['user']['nivel']))
-		$nivel = false;
-	else
-		$nivel = $_SESSION['user']['nivel'];
-		
-	if (isset($_SESSION['add'])) {
-		echo '<div class="ok"><img src="img/icons/accept.png" />Producto añadido</div>';
-		unset($_SESSION['add']);
-	}
-?>
-<h1><img src="img/icons/money.png" />Ventas <?php if ($nivel == 'Jefe' || $nivel == 'Director') { echo '<a class="action" href="#"><img src="img/icons/add.png" />Añadir venta</a>'; ?></h1>
+<a class="action" href="#"><img src="img/icons/add.png" />Añadir producto</a></h1>
 <div class="prodaction">
 	<fieldset>
 		<legend>Añadir producto</legend>
-		<form method="post" action="act/product_add.php">
+		<form method="post" action="act/product_add.php" enctype="multipart/form-data">
 			<div class="fixed">
 				<label for="nombre">Nombre:</label> <input type="text" name="nombre" maxlength="50" />
 				<label for="precio">Precio:</label> <input type="text" name="precio" class="number" />
@@ -33,6 +22,10 @@
 						<option>Accesorio</option>
 					</select></div>
 			</div>
+			<span class="upimage">
+				Imagen: <input type="file" name="imagen" id="imagen" />
+			</span>
+			<input id="checkurl" type="checkbox" name="imgurl" /><label for="checkurl">URL</label>
 			<div class="optional">
 				<label for="plataforma">Plataforma:</label> <select name="plataforma" id="plataforma">
 								<option>PC</option>
@@ -70,15 +63,3 @@
 		</form>
 	</fieldset>
 </div>
-<?php } else echo '</h1>'; ?>
-<table>
-	<tr>
-		<th>ID</th>
-		<th>Fecha</th>
-		<th>Cliente</th>
-		<th>Empleado</th>
-		<th>Sucursal</th>
-		<th>Productos</th>
-		<th>Total</th>
-	</tr>
-</table>

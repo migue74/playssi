@@ -3,6 +3,7 @@
 	include('../inc/functions.php');
 	
 	if ($_POST) {
+		$id = $_POST['id'];
 		$nombre = $_POST['nombre'];
 		$precio = $_POST['precio'];
 		$tipo = $_POST['tipo'];
@@ -14,25 +15,20 @@
 			$genero = $_POST['genero'];
 			$parental = $_POST['parental'];
 			
-			$sql2 = "INSERT INTO juegos (plataforma, genero, clas_parental, id_producto)
-				VALUES ('$plataforma', '$genero', '$parental', sec_productos.CURRVAL)";
+			$sql2 = "UPDATE juegos SET plataforma = '$plataforma', genero = '$genero', clas_parental = '$parental' WHERE id_producto = $id";
 		} else if ($tipo == 'Consola') {
 			$capacidad = $_POST['capacidad'];
-			$sql2 = "INSERT INTO consolas (capacidad, id_producto)
-				VALUES ($capacidad, sec_productos.CURRVAL)";
+			$sql2 = "UPDATE consolas SET capacidad = '$capacidad' WHERE id_producto = $id";
 		} else {
 			$tipoacc = $_POST['tipoacc'];
-			$sql2 = "INSERT INTO accesorios (tipo, id_producto)
-				VALUES ('$tipoacc', sec_productos.CURRVAL)";
+			$sql2 = "UPDATE accesorios SET tipo = '$tipoacc' WHERE id_producto = $id";
 		}
 		
 		if ($newed) {
 			$sql1 = "INSERT INTO editores (id, nombre) VALUES (sec_editores.NEXTVAL, '$editor')";
-			$sql = "INSERT INTO productos (id, nombre, precio, fecha, tipo, stock, id_editor)
-				VALUES (sec_productos.NEXTVAL, '$nombre', '$precio', CURRENT_TIMESTAMP, '$tipo', 10, sec_editores.CURRVAL)";
+			$sql = "UPDATE productos SET nombre = '$nombre', precio = '$precio', tipo = '$tipo', id_editor = sec_editores.CURRVAL WHERE id = $id";
 		} else
-			$sql = "INSERT INTO productos (id, nombre, precio, fecha, tipo, stock, id_editor)
-					VALUES (sec_productos.NEXTVAL, '$nombre', '$precio', CURRENT_TIMESTAMP, '$tipo', 10, $editor)";
+			$sql = "UPDATE productos SET nombre = '$nombre', precio = '$precio', tipo = '$tipo', id_editor = '$editor' WHERE id = $id";
 		
 		try {
 			$conex = new PDO($host, $username, $password);
@@ -40,14 +36,9 @@
 			if ($newed) $stmt = $conex->query($sql1);
 			$stmt = $conex->query($sql);
 			$stmt = $conex->query($sql2);
-			$stmt = $conex->query("SELECT sec_productos.CURRVAL FROM dual");
 			$conex = null;
 		} catch (PDOException $e) {
 			echo 'ERROR: ' . $e->GetMessage();
-		}
-		
-		foreach ($stmt as $row) {
-			$id = $row[0];
 		}
 		
 		if (isset($_FILES['imagen']['tmp_name'])) {
@@ -85,6 +76,6 @@
 		}
 		
 		session_start();
-		$_SESSION['action'] = 'add';
-		header('Location: ../index.php?pag=productos');
+		$_SESSION['action'] = 'edit';
+		header('Location: ../index.php?pag=productos&id=' . $id);
 	}

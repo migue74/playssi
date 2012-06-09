@@ -32,3 +32,12 @@
 		$n = str_replace(',', '.', $n);
 		return number_format($n, 2, ',', '.');
 	}
+	
+	function selected($v, $r) {
+		if ($v == $r)
+			return 'selected';
+	}
+	
+	function fzero($n) {
+		return str_replace('.', ',', ((float) str_replace(',', '.', $n)));
+	}

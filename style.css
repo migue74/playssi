@@ -9,6 +9,10 @@ body {
 	color: #555;
 }
 
+a img {
+	border: 0;
+}
+
 h1 {
 	padding: 10px;
 	background: #F1F8FB;
@@ -31,13 +35,13 @@ h1 img.sep {
 	vertical-align: 0;
 }
 
-h1 a.add {
+h1 a.action {
 	float: right;
 	color: #34AFDA;
 	text-decoration: none;
 }
 
-h1 a.add:hover {
+h1 a:hover {
 	text-decoration: underline;
 }
 
@@ -384,18 +388,18 @@ table a:hover {
 	margin-right: 0;
 }
 
-.addproduct {
+.prodaction {
 	display: none;
 	margin-bottom: 30px;
 }
 
-.addproduct fieldset {
+.prodaction fieldset {
 	border: 1px solid #34AFDA;
 	padding: 10px;
 	width: 938px;
 }
 
-.addproduct legend {
+.prodaction legend {
 	font-family: Arial;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -403,35 +407,30 @@ table a:hover {
 	padding: 0 5px;
 }
 
-.addproduct input, .addproduct select {
+.prodaction input, .prodaction select {
 	margin-right: 40px;
 }
 
-.addproduct input {
+.prodaction input {
 	width: 300px;
 	height: 15px;
 }
 
-.addproduct input.number {
+.prodaction input.number {
 	width: 75px;
 	text-align: right;
 }
 
-.addproduct .fixed {
+.prodaction .fixed {
 	height: 30px;
 }
 
-.addproduct .upimage input {
-	height: 20px;
-	width: 200px;
-}
-
-.addproduct .optional {
+.prodaction .optional {
 	margin-top: 10px;
 	float: left;
 }
 
-.addproduct input[type=submit] {
+.prodaction input[type=submit] {
 	width: 100px;
 	float: right;
 	margin-right: 0;
@@ -439,13 +438,13 @@ table a:hover {
 	height: auto;
 }
 
-.addproduct input[type=checkbox] {
+.prodaction input[type=checkbox] {
 	margin: 0 0 0 -40px;
 	width: 20px;
 	vertical-align: -2px;
 }
 
-.addproduct .tipo {
+.prodaction .tipo {
 	float: right;
 }
 
@@ -464,4 +463,71 @@ table a:hover {
 .ok img {
 	vertical-align: -3px;
 	margin-right: 5px;
+}
+
+.upimage {
+	display: block;
+	height: 20px;
+	width: 400px;
+	float: left;
+}
+
+.upimage input[type=file] {
+	height: 25px;
+}
+
+.product {
+	overflow: hidden;
+}
+
+.product .image {
+	width: 180px;
+	height: 140px;
+	padding: 10px;
+	border: 1px solid #DBEFF6;
+	float: left;
+	text-align: center;
+	margin-right: 30px;
+}
+
+.product h2 {
+	font-weight: bold;
+	font-family: Arial;
+	font-size: 28px;
+	text-transform: uppercase;
+}
+
+.product .editor {
+	font-family: Arial;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #999;
+}
+
+.product .precio {
+	border: 1px solid #34AFDA;
+	width: 120px;
+	height: 80px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 20px;
+	float: left;
+	margin-top: 29px;
+}
+
+.product .precio h4 {
+	font-family: Arial;
+	font-size: 14px;
+	background: #34AFDA;
+	color: #FFF;
+	padding: 2px 0;
+	text-shadow: 0 -1px 1px #21708b;
+}
+
+.product .precio span {
+	line-height: 60px;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 30px;
+	padding: 5px;
 }
