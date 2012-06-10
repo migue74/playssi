@@ -111,4 +111,8 @@ $(document).ready(function() {
 	$('.remove').live('click', function() {
 		$(this).parent().remove();
 	});
+	
+	$('#cantidad').change(function() {
+		$('#total').val($(this).val());
+	});
 });

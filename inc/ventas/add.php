@@ -13,20 +13,21 @@
 							}
 						?>
 					</select>
+				Total: <input type="text" id="total" class="number" readonly="readonly" />
 				<a href="#" class="add lower"><img src="img/icons/brick_add.png" />Añadir producto</a>
 			</div>
 			<div class="optional">
 				<span>
-					Producto: <select name="producto[]">
+					Producto: <select name="producto[]" id="producto">
 						<?php
-							$sql = "SELECT id, nombre FROM productos ORDER BY nombre ASC";
+							$sql = "SELECT id, nombre, precio FROM productos ORDER BY nombre ASC";
 							$query = query($sql);
 							foreach ($query as $row) {
-								echo '<option value="' . $row['ID'] . '">' . $row['NOMBRE'] . '</option>';
+								echo '<option value="' . $row['ID'] . '" data-precio="' . $row['PRECIO'] . '">' . $row['NOMBRE'] . '</option>';
 							}
 						?>
 					</select>
-					Cantidad: <input type="text" name="cantidad[]" class="number" />
+					Cantidad: <input type="text" name="cantidad[]" class="number" id="cantidad" />
 				</span>
 			</div>
 			<input type="submit" value="Enviar" />

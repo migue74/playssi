@@ -6,8 +6,9 @@
 	}
 ?>
 <h1><img src="img/icons/money.png" />Ventas 
-<?php 
-	include('inc/ventas/add.php');
+<?php
+	if (isset($_SESSION['user']['nivel']))
+		include('inc/ventas/add.php');
 		
 	if (isset($_GET['id']))
 		include('inc/ventas/id.php');
