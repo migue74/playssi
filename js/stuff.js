@@ -112,7 +112,40 @@ $(document).ready(function() {
 		$(this).parent().remove();
 	});
 	
-	$('#cantidad').change(function() {
-		$('#total').val($(this).val());
+	total = 0;
+	$('#cantidad').live('change', function() {
+		var precio = $(this).parent().find('#producto option:selected').data('precio').replace(',', '.');
+		var cantidad = $(this).val();
+		total += parseFloat(cantidad) * parseFloat(precio);
+		$('#total').val(total);
+	});
+	
+	$('#producto').live('change', function() {
+		var cantidad = $(this).parent().find('#cantidad').val();
+		if (!isNaN(cantidad))
+			cantidad = 0;
+		var precio = $(this).find('option:selected').data('precio').replace(',', '.');
+		total += parseFloat(cantidad) * parseFloat(precio);
+		$('#total').val(total);
+	});
+	
+	$('#formulario').submit(function() {
+		var errors = 0;
+		$("#formulario :input").map(function(){
+			 if (!$(this).val())
+				errors++;
+		});
+		if (errors > 0){
+			alert("El formulario no puede contener campos vacíos");
+			return false;
+		}
+	});
+	
+	$('#email').blur(function() {
+		var pattern = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+		if (pattern.test($(this).val()) == false) {
+			alert('El E-Mail no es correcto');
+			return false;
+		}
 	});
 });

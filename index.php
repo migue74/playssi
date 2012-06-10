@@ -62,6 +62,8 @@
 						<li><a href="?pag=ventas" <?php echo activeTab('ventas'); ?>>Ventas</a></li>
 						<li><a href="?pag=clientes" <?php echo activeTab('clientes'); ?>>Clientes</a></li>
 						<li><a href="?pag=empleados" <?php echo activeTab('empleados'); ?>>Empleados</a></li>
+						<li><a href="?pag=subastas" <?php echo activeTab('subastas'); ?>>Subastas</a></li>
+						<li><a href="?pag=descripcion" <?php echo activeTab('descripcion'); ?>>Descripcion</a></li>
 					</ul>
 				</div>
 			</div>
@@ -100,12 +102,21 @@
 						case 'empleados':
 							include('pag/empleados.php');
 							break;
+						case 'subastas':
+							include('pag/subastas.php');
+							break;
+						case 'descripcion':
+							include('pag/descripcion.php');
+							break;
 						default:
 							include('pag/home.php');
 							break;
 					}
 				?>
 			</div>
+		</div>
+		<div class="footer">
+			Página web realizada por Miguel Ángel Ruiz Roldán para la asignatura IISSI del Grado de Ingeniería del Software. Más información en la sección <a href="?pag=descripcion">descripción</a>.
 		</div>
 	</body>
 </html>

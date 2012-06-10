@@ -2,7 +2,8 @@
 <div class="prodaction">
 	<fieldset>
 		<legend>Añadir venta</legend>
-		<form method="post" action="act/venta_add.php">
+		<form id="formulario" method="post" action="act/venta_add.php">
+			<input type="hidden" name="empleado" value="<?php echo $_SESSION['user']['id']; ?>" />
 			<div class="fixed">
 				<label for="cliente">Cliente:</label> <select name="cliente" id="cliente">
 						<?php

@@ -2,7 +2,7 @@
 <div class="prodaction">
 	<fieldset>
 		<legend>Añadir empleado</legend>
-		<form method="post" action="act/empl_add.php">
+		<form id="formulario" method="post" action="act/empl_add.php">
 			<div class="client">
 				<table>
 					<tr>

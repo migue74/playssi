@@ -87,7 +87,7 @@
 			$query = query($sql);
 			foreach ($query as $row) {
 				echo '<a class="image" href="?pag=subastas&id=' . $row['ID'] . '">
-						<span class="imagebox"><img src="img/bids/' . $row['ID'] . '.png" /></span>
+						<span class="imagebox"><img src="img/auct/' . $row['ID'] . '.png" /></span>
 						<h3>' . $row['ARTICULO'] . '</h3>
 						<span class="editor">' . $row['NOMBRE'] . '</span>
 					</a>
@@ -208,7 +208,7 @@
 							<span>' . fdate($row['FECHA']) . '</span>
 						</div>
 					</div>
-					<a href="?pag=ventas&id=' . $row['ID'] . '">
+					<a href="?pag=ventas">
 						<h3>Cliente: ' . $row['NOMCLI'] . '</h3>
 						<span class="editor">Empleado: ' . $row['NOMEMP'] . '</span>
 					</a>';

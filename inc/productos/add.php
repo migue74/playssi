@@ -2,7 +2,7 @@
 <div class="prodaction">
 	<fieldset>
 		<legend>Añadir producto</legend>
-		<form method="post" action="act/product_add.php" enctype="multipart/form-data">
+		<form id="formulario" method="post" action="act/product_add.php" enctype="multipart/form-data">
 			<div class="fixed">
 				<label for="nombre">Nombre:</label> <input type="text" name="nombre" maxlength="50" />
 				<label for="precio">Precio:</label> <input type="text" name="precio" class="number" />

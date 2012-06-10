@@ -10,8 +10,5 @@
 	if (isset($_SESSION['user']['nivel']))
 		include('inc/ventas/add.php');
 		
-	if (isset($_GET['id']))
-		include('inc/ventas/id.php');
-	else
-		include('inc/ventas/todos.php');
+	include('inc/ventas/todos.php');
 ?>

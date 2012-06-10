@@ -5,11 +5,11 @@
 	$query = query($sql);
 	foreach ($query as $row) {
 ?>
-<a href="#" class="action"><img src="img/icons/pencil.png" />Editar</a></h1>
-<div class="prodaction">
+</h1>
+<div class="prodaction" style="display: inline">
 	<fieldset>
 		<legend>Editar cliente</legend>
-		<form method="post" action="act/client_edit.php">
+		<form id="formulario" method="post" action="act/client_edit.php">
 			<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>" />
 			<div class="client">
 				<table>
@@ -18,7 +18,7 @@
 						<td>NIF:</td><td><input type="text" name="nif" maxlength="9" class="short" value="<?php echo $row['NIF']; ?>" /></td>
 					</tr>
 					<tr>
-						<td>E-Mail:</td><td><input type="text" name="email" value="<?php echo $row['EMAIL']; ?>" /></td>
+						<td>E-Mail:</td><td><input type="text" id="email" name="email" value="<?php echo $row['EMAIL']; ?>" /></td>
 						<td>Teléfono:</td><td><input type="text" name="tlf" class="short" value="<?php echo $row['TELEFONO']; ?>" /></td>
 					</tr>
 					<tr>

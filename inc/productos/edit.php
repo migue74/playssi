@@ -10,7 +10,7 @@
 <div class="prodaction">
 	<fieldset>
 		<legend>Editar producto</legend>
-		<form method="post" action="act/product_edit.php" enctype="multipart/form-data">
+		<form id="formulario" method="post" action="act/product_edit.php" enctype="multipart/form-data">
 			<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>" />
 			<div class="fixed">
 				<label for="nombre">Nombre:</label> <input type="text" name="nombre" maxlength="50" value="<?php echo $row['NOMBRE']; ?>" />

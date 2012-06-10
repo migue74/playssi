@@ -12,7 +12,7 @@
 		unset($_SESSION['action']);
 	}
 ?>
-<h1><img src="img/icons/box.png" />Productos 
+<h1><img src="img/icons/brick.png" />Productos 
 <?php 
 	if (!isset($_GET['id']) && $nivel == 'Jefe' || $nivel == 'Director')
 		include('inc/productos/add.php');

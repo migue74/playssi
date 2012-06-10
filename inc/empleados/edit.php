@@ -6,11 +6,11 @@
 	$query = query($sql);
 	foreach ($query as $row) {
 ?>
-<a href="#" class="action"><img src="img/icons/pencil.png" />Editar</a></h1>
-<div class="prodaction">
+</h1>
+<div class="prodaction" style="display: inline">
 	<fieldset>
 		<legend>Editar empleado</legend>
-		<form method="post" action="act/empl_edit.php">
+		<form id="formulario" method="post" action="act/empl_edit.php">
 			<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>" />
 			<div class="client">
 				<table>

@@ -2,7 +2,7 @@
 <div class="prodaction">
 	<fieldset>
 		<legend>Añadir cliente</legend>
-		<form method="post" action="act/client_add.php">
+		<form id="formulario" method="post" action="act/client_add.php">
 			<div class="client">
 				<table>
 					<tr>
@@ -10,7 +10,7 @@
 						<td>NIF:</td><td><input type="text" name="nif" maxlength="9" class="short" /></td>
 					</tr>
 					<tr>
-						<td>E-Mail:</td><td><input type="text" name="email" /></td>
+						<td>E-Mail:</td><td><input type="text" id="email" name="email" /></td>
 						<td>Teléfono:</td><td><input type="text" name="tlf" class="short" /></td>
 					</tr>
 					<tr>

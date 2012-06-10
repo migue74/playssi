@@ -63,9 +63,32 @@ h1 a:hover {
 	text-decoration: underline;
 }
 
+.content {
+	overflow: hidden;
+}
+
 .wrapper {
 	width: 960px;
 	margin: 0 auto;
+}
+
+.wrapper p {
+	margin-bottom: 15px;
+	font-family: Arial;
+	font-size: 16px;
+	line-height: 22px;
+	text-align: justify;
+}
+
+.desc {
+	font-family: Arial;
+	font-size: 16px;
+	margin-left: 30px;
+	list-style-type: square;
+}
+
+.desc li {
+	margin-bottom: 10px;
 }
 
 .header {
@@ -391,6 +414,15 @@ table a:hover {
 	text-decoration: underline;
 }
 
+.box2 {
+	width: 465px;
+	margin-right: 30px;
+}
+
+.box2:nth-child(2n + 2) {
+	margin-right: 0;
+}
+
 .box3 {
 	width: 300px;
 	margin-right: 30px;
@@ -401,7 +433,7 @@ table a:hover {
 }
 
 .prodaction {
-
+	display: none;
 	margin-bottom: 30px;
 }
 
@@ -619,4 +651,21 @@ table a:hover {
 
 .client table tr {
 	background: transparent;
+}
+
+.footer {
+	margin: auto;
+	margin-top: 30px;
+	background: #F1F8FB;
+	padding: 10px;
+	width: 940px;
+}
+
+.footer a {
+	color: #34AFDA;
+	text-decoration: none;
+}
+
+.footer a:hover {
+	text-decoration: underline;
 }
