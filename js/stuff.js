@@ -60,7 +60,7 @@ $(document).ready(function() {
 			return false;
 	}); 
 	
-	$('.numbox').textfill({ maxFontPixels: 18 });
+	$('.box .numbox').textfill({ maxFontPixels: 18 });
 	
 	$('a.action').click(function() {
 		if ($('.prodaction').css('display') == 'none')
@@ -98,5 +98,17 @@ $(document).ready(function() {
 			$('.upimage').append('Imagen: <input type="text" name="imagen" id="urlimg" />');
 		else
 			$('.upimage').append('Imagen: <input type="file" name="imagen" id="imagen" />');
+	});
+	
+	$('a.add').click(function() {
+		var element = $('.optional span:nth-child(1)').clone();
+		element.find('input').val('');
+		element.find('select')[0].selectedIndex = 0;
+		element.append('<a href="#" class="remove lower"><img src="img/icons/brick_delete.png" />Eliminar</a>');
+		$('.optional').append(element);
+	});
+	
+	$('.remove').live('click', function() {
+		$(this).parent().remove();
 	});
 });

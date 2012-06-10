@@ -18,14 +18,22 @@
 			return 'class="active"';
 	}
 	
-	function fdate($f, $h = false, $t = 1) {
+	function fdate($f, $h = false) {
 		$mes = Array('Jan' => 'Ene', 'Apr' => 'Abr', 'Aug' => 'Ago', 'Dec' => 'Dic');
 		$res = date_create_from_format('d/m/y H:i:s,u', $f);
-		$res = date_format($res, 'j M Y');
-		$res = explode(' ', $res);
-		if ($res[1] == 'Jan' || $res[1] == 'Apr' || $res[1] == 'Aug' || $res[1] == 'Dec')
-			$res[1] = $mes[$res[1]];
-		return implode(' ', $res);
+		if (!$h) {
+			$res = date_format($res, 'j M Y');
+			$res = explode(' ', $res);
+			if ($res[1] == 'Jan' || $res[1] == 'Apr' || $res[1] == 'Aug' || $res[1] == 'Dec')
+				$res[1] = $mes[$res[1]];
+			return implode(' ', $res);
+		} else {
+			$res = date_format($res, 'j M Y, H:i');
+			$res = explode(' ', $res);
+			if ($res[1] == 'Jan' || $res[1] == 'Apr' || $res[1] == 'Aug' || $res[1] == 'Dec')
+				$res[1] = $mes[$res[1]];
+			return implode(' ', $res);
+		}
 	}
 	
 	function fnum($n) {

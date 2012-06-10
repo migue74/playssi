@@ -49,7 +49,7 @@
 									<li><strong>Media:</strong> ' . fnum($row['MEDIA']) . ' €</li>
 								</ul>
 							</div>
-							<a class="logout" href="logout.php"><img src="img/icons/door_in.png" />Cerrar sesión</a>';
+							<a class="logout lower" href="logout.php"><img src="img/icons/door_in.png" />Cerrar sesión</a>';
 						}
 					} ?>
 				</div>

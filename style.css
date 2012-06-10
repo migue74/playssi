@@ -13,6 +13,20 @@ a img {
 	border: 0;
 }
 
+a.lower {
+	color: #34AFDA;
+	text-decoration: none;
+}
+
+a.lower:hover {
+	text-decoration: underline;
+}
+
+a.lower img {
+	vertical-align: -3px;
+	margin-right: 5px;
+}
+
 h1 {
 	padding: 10px;
 	background: #F1F8FB;
@@ -139,12 +153,6 @@ input[type=submit]:active {
 
 .user a.logout {
 	float: right;
-	text-decoration: none;
-	color: #34AFDA;
-}
-
-.user a.logout:hover {
-	text-decoration: underline;
 }
 
 .menu {
@@ -389,7 +397,7 @@ table a:hover {
 }
 
 .prodaction {
-	display: none;
+
 	margin-bottom: 30px;
 }
 
@@ -425,9 +433,19 @@ table a:hover {
 	height: 30px;
 }
 
+.prodaction .fixed a.add {
+	float: right;
+}
+
 .prodaction .optional {
 	margin-top: 10px;
 	float: left;
+}
+
+.prodaction .optional span {
+	margin-bottom: 10px;
+	display: block;
+	width: 500px;
 }
 
 .prodaction input[type=submit] {
@@ -480,6 +498,20 @@ table a:hover {
 	overflow: hidden;
 }
 
+.product .head {
+	overflow: hidden;
+}
+
+.product .right {
+	float: right;
+	width: 360px;
+}
+
+.product .left {
+	float: left;
+	width: 600px;
+}
+
 .product .image {
 	width: 180px;
 	height: 140px;
@@ -530,4 +562,45 @@ table a:hover {
 	font-weight: bold;
 	font-size: 30px;
 	padding: 5px;
+}
+
+.product .numbox {
+	border: 1px solid #34AFDA;
+	width: 85px;
+	height: 50px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 18px;
+	margin-bottom: 30px;
+	margin-left: 30px;
+	float: right;
+}
+
+.product .numbox:nth-child(3n + 3) {
+	margin-left: 0;
+}
+
+.product .numbox h4 {
+	font-family: Arial;
+	font-size: 11px;
+	background: #34AFDA;
+	color: #FFF;
+	padding: 1px 0;
+}
+
+.product .numbox span {
+	line-height: 35px;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 12px;
+	padding: 5px;
+}
+
+.product .clients {
+	clear: both;
+	margin-top: 30px;
+}
+
+.product .clients th {
+	text-align: left;
 }
