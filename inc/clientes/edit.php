@@ -15,7 +15,7 @@
 				<table>
 					<tr>
 						<td>Nombre:</td><td><input type="text" name="nombre" maxlength="50" value="<?php echo $row['NOMBRE']; ?>" /></td>
-						<td>NIF:</td><td><input type="text" name="nif" maxlength="9" class="short" value="<?php echo $row['NIF']; ?>" /></td>
+						<td>NIF:</td><td><input type="text" name="nif" maxlength="9" class="short" value="<?php echo $row['NIF']; ?>" id="nif" /></td>
 					</tr>
 					<tr>
 						<td>E-Mail:</td><td><input type="text" id="email" name="email" value="<?php echo $row['EMAIL']; ?>" /></td>

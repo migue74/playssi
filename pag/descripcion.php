@@ -1,4 +1,4 @@
-<h1><img src="img/icons/page_white_code.png" />Descripción</h1>
+<h1><img src="img/icons/page_white_code.png" alt="Descripcion" />Descripción</h1>
 <p>Esta web trata de simular el panel de administración de una cadena de tiendas de videojuegos, 
 aunque está reducido debido al tiempo disponible para realizar el trabajo, por lo que es muy 
 sencillo.</p>
@@ -18,11 +18,10 @@ parecer un poco vacías. También he de comentar que la he realizado yo solo puest
 complicado poder trabajar en grupo en una actividad tan dinámica como esta, donde has de conocer cada línea de tu compañero y resolver 
 cada problema que surja preferiblemente en persona.</p>
 
-<p>Por último, se han realizado algunos cambios en el primer trabajo para que la web funcione mejor y de una forma más lógica y correcta. Los cambios introducidos son:
-	<ul class="desc">
-		<li>Añadir campo contraseña a empleados.</li>
-		<li>Eliminado campo pais de editores.</li>
-		<li>Eliminado campo id_sucursal de subastas.</li>
-		<li>Añadido trigger para actualizar directamente el stock al comprar.</li>
-	</ul>
-</p>
+<p>Por último, se han realizado algunos cambios en el primer trabajo para que la web funcione mejor y de una forma más lógica y correcta. Los cambios introducidos son:</p>
+<ul class="desc">
+	<li>Añadir campo contraseña a empleados.</li>
+	<li>Eliminado campo pais de editores.</li>
+	<li>Eliminado campo id_sucursal de subastas.</li>
+	<li>Añadido trigger para actualizar directamente el stock al comprar.</li>
+</ul>

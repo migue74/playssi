@@ -30,7 +30,7 @@
 			foreach ($query as $row) {
 				echo '<tr>
 						<td style="text-align: center">' . $row['ID'] . '</td>
-						<td><a href="?pag=productos&id=' . $row['ID'] . '">' . $row['NOMBRE'] . '</a></td>
+						<td><a href="?pag=productos&amp;id=' . $row['ID'] . '">' . $row['NOMBRE'] . '</a></td>
 						<td style="text-align: right">' . fzero($row['PRECIO']) . '</td>
 						<td style="text-align: right">' . $row['SUMCANT'] . '</td>
 						<td style="text-align: right">' . $row['TOTAL'] . '</td>
@@ -69,7 +69,7 @@
 			foreach ($query as $row) {
 				echo '<tr>
 						<td style="text-align: center">' . $row['ID'] . '</td>
-						<td><a href="?pag=productos&id=' . $row['ID'] . '">' . $row['NOMBRE'] . '</a></td>
+						<td><a href="?pag=productos&amp;id=' . $row['ID'] . '">' . $row['NOMBRE'] . '</a></td>
 						<td style="text-align: right">' . $row['PRECIO'] . '</td>
 						<td style="text-align: right">' . $row['SUMCANT'] . '</td>
 						<td style="text-align: right">' . $row['TOTAL'] . '</td>
@@ -108,7 +108,7 @@
 			foreach ($query as $row) {
 				echo '<tr>
 						<td style="text-align: center">' . $row['ID'] . '</td>
-						<td><a href="?pag=productos&id=' . $row['ID'] . '">' . $row['NOMBRE'] . '</a></td>
+						<td><a href="?pag=productos&amp;id=' . $row['ID'] . '">' . $row['NOMBRE'] . '</a></td>
 						<td style="text-align: right">' . $row['PRECIO'] . '</td>
 						<td style="text-align: right">' . $row['SUMCANT'] . '</td>
 						<td style="text-align: right">' . $row['TOTAL'] . '</td>

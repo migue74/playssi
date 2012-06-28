@@ -1,4 +1,4 @@
-<h1><img src="img/icons/chart_bar.png" />Estadísticas</h1>
+<h1><img src="img/icons/chart_bar.png" alt="Estadísticas" />Estadísticas</h1>
 <div class="boxes">
 	<div class="box box3">
 		<div class="line">
@@ -15,9 +15,9 @@
 					WHERE rownum = 1";
 			$query = query($sql);
 			foreach ($query as $row) {
-				echo '<a class="image" href="?pag=productos&id=' . $row['ID'] . '">
-						<span class="imagebox"><img src="img/prod/' . $row['ID'] . '.png" /></span>
-						<h3>' . $row['NOMBRE'] . '</h3>
+				echo '<a class="image" href="?pag=productos&amp;id=' . $row['ID'] . '">
+						<span class="imagebox"><img src="img/prod/' . $row['ID'] . '.png" alt="Producto" /></span>
+						<span class="title">' . $row['NOMBRE'] . '</span>
 						<span class="editor">' . $row['EDNOM'] . '</span>
 					</a>
 					<div class="vert">
@@ -52,9 +52,9 @@
 					WHERE rownum = 1";
 			$query = query($sql);
 			foreach ($query as $row) {
-				echo '<a class="image" href="?pag=productos&id=' . $row['ID'] . '">
-						<span class="imagebox"><img src="img/prod/' . $row['ID'] . '.png" /></span>
-						<h3>' . $row['NOMBRE'] . '</h3>
+				echo '<a class="image" href="?pag=productos&amp;id=' . $row['ID'] . '">
+						<span class="imagebox"><img src="img/prod/' . $row['ID'] . '.png" alt="Producto" /></span>
+						<span class="title">' . $row['NOMBRE'] . '</span>
 						<span class="editor">' . $row['EDNOM'] . '</span>
 					</a>
 					<div class="vert">
@@ -86,9 +86,9 @@
 					WHERE rownum = 1";
 			$query = query($sql);
 			foreach ($query as $row) {
-				echo '<a class="image" href="?pag=subastas&id=' . $row['ID'] . '">
-						<span class="imagebox"><img src="img/auct/' . $row['ID'] . '.png" /></span>
-						<h3>' . $row['ARTICULO'] . '</h3>
+				echo '<a class="image" href="?pag=subastas&amp;id=' . $row['ID'] . '">
+						<span class="imagebox"><img src="img/auct/' . $row['ID'] . '.png" alt="Producto" /></span>
+						<span class="title">' . $row['ARTICULO'] . '</span>
 						<span class="editor">' . $row['NOMBRE'] . '</span>
 					</a>
 					<div class="vert">
@@ -136,8 +136,8 @@
 							<span>' . fnum($row['MEDIA']) . '</span>
 						</div>
 					</div>
-					<a href="?pag=empleados&id=' . $row['ID'] . '">
-						<h3>' . $row['NOMBRE'] . '</h3>
+					<a href="?pag=empleados&amp;id=' . $row['ID'] . '">
+						<span class="title">' . $row['NOMBRE'] . '</span>
 						<span class="editor">' . $row['NIVEL'] . '</span>
 					</a>';
 			}
@@ -171,8 +171,8 @@
 							<span>' . fnum($row['MEDIA']) . '</span>
 						</div>
 					</div>
-					<a href="?pag=clientes&id=' . $row['ID'] . '">
-						<h3>' . $row['NOMBRE'] . '</h3>
+					<a href="?pag=clientes&amp;id=' . $row['ID'] . '">
+						<span class="title">' . $row['NOMBRE'] . '</span>
 						<span class="editor">' . $row['POBLACION'] . '</span>
 					</a>';
 			}
@@ -209,7 +209,7 @@
 						</div>
 					</div>
 					<a href="?pag=ventas">
-						<h3>Cliente: ' . $row['NOMCLI'] . '</h3>
+						<span class="title">Cliente: ' . $row['NOMCLI'] . '</span>
 						<span class="editor">Empleado: ' . $row['NOMEMP'] . '</span>
 					</a>';
 			}

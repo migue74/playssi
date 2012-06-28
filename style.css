@@ -278,6 +278,7 @@ input[type=submit]:active {
 .box .line {
 	border-bottom: 1px solid #34AFDA;
 	margin-bottom: 20px;
+	height: 7px;
 }
 
 .box h2 {
@@ -286,18 +287,17 @@ input[type=submit]:active {
 	font-size: 12px;
 	text-transform: uppercase;
 	color: #34AFDA;
-	margin-bottom: -8px;
 	background: #FFF;
 	display: inline-block;
 	padding-right: 5px;
 }
 
-.box h3 {
+.box .title {
 	font-weight: bold;
 	font-family: Arial;
 	font-size: 16px;
 	text-transform: uppercase;
-	clear: both;
+	display: block;
 }
 
 .box a {
@@ -518,7 +518,19 @@ table a:hover {
 	text-shadow: 1px 1px 1px #FFF;
 }
 
-.ok img {
+.error {
+	background: rgba(255, 0, 0, 0.5);
+	width: 940px;
+	padding: 10px;
+	color: #810000;
+	margin-bottom: 30px;
+	font-family: Arial;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 1px #FFF;
+}
+
+.ok img, .error img {
 	vertical-align: -3px;
 	margin-right: 5px;
 }
@@ -668,4 +680,8 @@ table a:hover {
 
 .footer a:hover {
 	text-decoration: underline;
+}
+
+.error .logo {
+	margin: 0 auto;
 }

@@ -37,6 +37,18 @@ $(document).ready(function() {
 		return false;
 	}
 	
+	function validaNIF2(value) {
+		if (value.match(/^([0-9]{8})[a-zA-Z]{1}$/)) {
+			var numero = value.substr(0, value.length - 1) % 23;
+			var letra = value.substr(value.length - 1, 1);
+			var letras = 'TRWAGMYFPDXBNJZSQVHLCKET';
+			letras = letras.substring(numero, numero + 1);
+			if (letras == letra)
+				return true;
+		}
+		return false;
+	}
+	
 	function validaPasswd(value) {
 		if (value.length < 6){
 			alert('ERROR: La contraseña debe tener 6 caracteres como minimo');
@@ -48,6 +60,14 @@ $(document).ready(function() {
 			return false;
 		} else
 			return true;
+	}
+	
+	function validaEmail(value) {
+		var pattern = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+		if (pattern.test(value) == false) {
+			return false;
+		}
+		return true;
 	}
 	
 	$("#login").submit(function() {
@@ -132,19 +152,15 @@ $(document).ready(function() {
 	$('#formulario').submit(function() {
 		var errors = 0;
 		$("#formulario :input").map(function(){
-			 if (!$(this).val())
+			if (this.id == 'nif' && !validaNIF2($(this).val()))
+				alert('ERROR: El NIF no es correcto');
+			if (this.id == 'email' && !validaEmail($(this).val()))
+				alert('ERROR: El E-Mail no es correcto');
+			if (!$(this).val())
 				errors++;
 		});
 		if (errors > 0){
 			alert("El formulario no puede contener campos vacíos");
-			return false;
-		}
-	});
-	
-	$('#email').blur(function() {
-		var pattern = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
-		if (pattern.test($(this).val()) == false) {
-			alert('El E-Mail no es correcto');
 			return false;
 		}
 	});

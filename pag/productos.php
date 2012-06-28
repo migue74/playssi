@@ -7,12 +7,14 @@
 	if (isset($_SESSION['action'])) {
 		if ($_SESSION['action'] == 'add')
 			echo '<div class="ok"><img src="img/icons/accept.png" />Producto añadido</div>';
+		else if ($_SESSION['action'] == 'error')
+			echo '<div class="error"><img src="img/icons/error.png" />¡Error! Los datos introducidos son incorrectos</div>';
 		else
 			echo '<div class="ok"><img src="img/icons/accept.png" />Producto editado</div>';
 		unset($_SESSION['action']);
 	}
 ?>
-<h1><img src="img/icons/brick.png" />Productos 
+<h1><img src="img/icons/brick.png" alt="Productos" />Productos 
 <?php 
 	if (!isset($_GET['id']) && $nivel == 'Jefe' || $nivel == 'Director')
 		include('inc/productos/add.php');

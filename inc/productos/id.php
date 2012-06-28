@@ -6,11 +6,11 @@
 	foreach ($query as $row) {
 		$tipo = $row['TIPO'];
 		if ($tipo == 'Juego')
-			echo '<img src="img/h1_sep.png" class="sep" /><img src="img/icons/controller.png" />';
+			echo '<img src="img/h1_sep.png" class="sep" alt="Imagen" /><img src="img/icons/controller.png" alt="Imagen" />';
 		else if ($tipo == 'Consola')
-			echo '<img src="img/h1_sep.png" class="sep" /><img src="img/icons/drive.png" />';
+			echo '<img src="img/h1_sep.png" class="sep" alt="Imagen" /><img src="img/icons/drive.png" alt="Imagen" />';
 		else
-			echo '<img src="img/h1_sep.png" class="sep" /><img src="img/icons/joystick.png" />';
+			echo '<img src="img/h1_sep.png" class="sep" alt="Imagen" /><img src="img/icons/joystick.png" alt="Imagen" />';
 		echo $row['NOMBRE'];
 		if ($nivel == 'Jefe' || $nivel == 'Director')
 			include('inc/productos/edit.php');
@@ -32,7 +32,7 @@
 	<div class="head">
 		<div class="left">
 			<div class="image">
-				<img src="img/prod/<?php echo $row['ID']; ?>.png" />
+				<img src="img/prod/<?php echo $row['ID']; ?>.png" alt="Imagen" />
 			</div>
 			<h2><?php echo $row['NOMPROD']; ?></h2>
 			<div class="editor">

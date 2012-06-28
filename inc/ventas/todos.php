@@ -22,8 +22,8 @@
 						<td>' . fdate($row2['FECHA'], true) . '</td>
 						<td>' . $row2['TOTAL'] . '</td>
 						<td>' . $row2['SUMCANT'] . '</td>
-						<td><a href="?pag=clientes&id=' . $row2['IDCLI'] . '">' . $row2['NOMCLI'] . '</a></td>
-						<td><a href="?pag=empleados&id=' . $row2['IDEMP'] . '">' . $row2['NOMEMP'] . '</a></td>
+						<td><a href="?pag=clientes&amp;id=' . $row2['IDCLI'] . '">' . $row2['NOMCLI'] . '</a></td>
+						<td><a href="?pag=empleados&amp;id=' . $row2['IDEMP'] . '">' . $row2['NOMEMP'] . '</a></td>
 					</tr>';
 			}
 		?>

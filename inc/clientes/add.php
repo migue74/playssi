@@ -7,7 +7,7 @@
 				<table>
 					<tr>
 						<td>Nombre:</td><td><input type="text" name="nombre" maxlength="50" /></td>
-						<td>NIF:</td><td><input type="text" name="nif" maxlength="9" class="short" /></td>
+						<td>NIF:</td><td><input type="text" name="nif" maxlength="9" class="short" id="nif" /></td>
 					</tr>
 					<tr>
 						<td>E-Mail:</td><td><input type="text" id="email" name="email" /></td>

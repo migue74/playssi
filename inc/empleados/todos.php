@@ -20,7 +20,7 @@
 			foreach ($query2 as $row2) {
 				echo '<tr>
 						<td>' . $row2['ID'] . '</td>
-						<td><a href="?pag=empleados&id=' . $row2['ID'] . '">' . $row2['NOMBRE'] . '</a></td>
+						<td><a href="?pag=empleados&amp;id=' . $row2['ID'] . '">' . $row2['NOMBRE'] . '</a></td>
 						<td>' . $row2['NIF'] . '</td>
 						<td>' . $row2['TELEFONO'] . '</td>
 						<td>' . $row2['DIRECCION'] . '</td>

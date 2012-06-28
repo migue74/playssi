@@ -5,15 +5,16 @@
 	if ($_POST) {
 		$nombre = $_POST['nombre'];
 		$nif = $_POST['nif'];
-		$email = $_POST['email'];
 		$tlf = $_POST['tlf'];
 		$direccion = $_POST['direccion'];
 		$poblacion = $_POST['poblacion'];
 		$cp = $_POST['cp'];
+		$sucursal = $_POST['sucursal'];
+		$passwd = $_POST['passwd'];
 		
-		if ($nombre != '' && checkNIF($nif) && checkEmail($email) && $tlf != '' && $direccion != '' && $poblacion != '' && is_numeric($cp)) {
-			$sql = "INSERT INTO clientes (id, nombre, nif, email, telefono, direccion, poblacion, cp)
-					VALUES (sec_clientes.NEXTVAL, '$nombre', '$nif', '$email', '$tlf', '$direccion', '$poblacion', '$cp')";
+		if ($nombre != '' && checkNIF($nif) && $tlf != '' && $direccion != '' && $poblacion != '' && is_numeric($cp) && $sucursal != '' && $passwd != '') {
+			$sql = "INSERT INTO empleados (id, nombre, nif, telefono, direccion, poblacion, cp, sucursal, passwd)
+					VALUES (sec_empleados.NEXTVAL, '$nombre', '$nif', '$tlf', '$direccion', '$poblacion', '$cp', '$sucursal', '$passwd')";
 			
 			try {
 				$conex = new PDO($host, $username, $password);
@@ -31,5 +32,5 @@
 			session_start();
 			$_SESSION['action'] = 'error';
 		}
-		header('Location: ../index.php?pag=clientes');
+		header('Location: ../index.php?pag=empleados');
 	}

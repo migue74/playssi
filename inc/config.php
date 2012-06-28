@@ -1,4 +1,4 @@
 <?php
-	$host = 'oci:dbname=MIGUEP7/XE';
+	$host = 'oci:dbname=localhost/XE';
 	$username = 'admin';
 	$password = 'admin';

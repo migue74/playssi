@@ -8,7 +8,7 @@
 	else
 		$pag = $_GET['pag'];
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=ISO-8859-1" />
@@ -24,18 +24,20 @@
 		<div class="header">
 			<div class="wrapper">
 				<div class="logo">
-					<img src="img/logo.png" />
+					<img src="img/logo.png" alt="PlaySSI" />
 				</div>
 				<div class="user" id="user">
 					<?php if (!isset($_SESSION['user'])) { ?>
 					<form id="login" method="post" action="login.php" accept-charset="utf-8">
-						<img src="img/icons/vcard.png" /><input type="text" id="nif" name="nif" /><label id="label_nif" for="nif">NIF</label>
-						<img src="img/icons/key.png" /><input type="password" id="passwd" name="passwd" /><label id="label_passwd" for="passwd">Contraseña</label>
-						<input type="submit" value="Enviar" />
+						<div>
+							<img src="img/icons/vcard.png" alt="NIF" /><input type="text" id="nif" name="nif" /><label id="label_nif" for="nif">NIF</label>
+							<img src="img/icons/key.png" alt="Contraseña" /><input type="password" id="passwd" name="passwd" /><label id="label_passwd" for="passwd">Contraseña</label>
+							<input type="submit" value="Enviar" />
+						</div>
 					</form>
 					<?php } else {
 						echo '<div class="info">
-								<img src="img/icons/user.png" /><strong>' . $_SESSION['user']['nombre'] . '</strong>
+								<img src="img/icons/user.png" alt="Imagen" /><strong>' . $_SESSION['user']['nombre'] . '</strong>
 								<ul>
 									<li><strong>Nivel:</strong> ' . $_SESSION['user']['nivel'] . '</li>';
 						$sql = "SELECT NVL(SUM(f.total), 0) AS sumfact, COUNT(f.id) AS numfact, NVL(AVG(f.total), 0) AS media
@@ -49,7 +51,7 @@
 									<li><strong>Media:</strong> ' . fnum($row['MEDIA']) . ' €</li>
 								</ul>
 							</div>
-							<a class="logout lower" href="logout.php"><img src="img/icons/door_in.png" />Cerrar sesión</a>';
+							<a class="logout lower" href="logout.php"><img src="img/icons/door_in.png" alt="Imagen" />Cerrar sesión</a>';
 						}
 					} ?>
 				</div>
@@ -68,7 +70,7 @@
 				</div>
 			</div>
 		</div>
-		<?php if (!isset($_SESSION['user']) && !isset($_SESSION['error'])) { ?>
+		<?php if (!isset($_SESSION['user']) && !isset($_SESSION['error']) && !isset($_SESSION['dberror'])) { ?>
 		<div class="alert-login">
 			<p>
 				<strong>Bienvenido a la web de administración de PlaySSI.</strong><br/>
@@ -84,6 +86,14 @@
 				Por favor, inténtelo de nuevo.
 			</p>
 			<a href="#" id="alert-login">Iniciar sesión</a>
+		</div>
+		<?php session_destroy(); } else if (isset($_SESSION['dberror'])) { $pag = 'error' ?>
+		<div class="alert-login">
+			<img src="img/icons/alert_big.png" />
+			<p>
+				<strong>¡Ups! Ocurrió un error :(</strong><br/>
+				Por favor, inténtelo de nuevo.
+			</p>
 		</div>
 		<?php session_destroy(); } ?>
 		<div class="content">
@@ -107,6 +117,8 @@
 							break;
 						case 'descripcion':
 							include('pag/descripcion.php');
+							break;
+						case 'error':
 							break;
 						default:
 							include('pag/home.php');

@@ -6,20 +6,26 @@
 		$cliente = $_POST['cliente'];
 		$cantidad = $_POST['cantidad'];
 		$id = $_POST['id'];
+		
+		if ($cliente != '' && is_numeric($cantidad)) {
 				
-		$sql = "INSERT INTO pujas (id, cantidad, fecha, id_cliente, id_subasta)
-				VALUES (sec_pujas.NEXTVAL, $cantidad, CURRENT_TIMESTAMP, $cliente, $id)";
-		
-		try {
-			$conex = new PDO($host, $username, $password);
-			$conex->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$stmt = $conex->query($sql);
-			$conex = null;
-		} catch (PDOException $e) {
-			echo 'ERROR: ' . $e->GetMessage();
+			$sql = "INSERT INTO pujas (id, cantidad, fecha, id_cliente, id_subasta)
+					VALUES (sec_pujas.NEXTVAL, $cantidad, CURRENT_TIMESTAMP, $cliente, $id)";
+			
+			try {
+				$conex = new PDO($host, $username, $password);
+				$conex->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				$stmt = $conex->query($sql);
+				$conex = null;
+			} catch (PDOException $e) {
+				echo 'ERROR: ' . $e->GetMessage();
+			}
+			
+			session_start();
+			$_SESSION['action'] = 'bid';
+		} else {
+			session_start();
+			$_SESSION['action'] = 'error';
 		}
-		
-		session_start();
-		$_SESSION['action'] = 'bid';
 		header('Location: ../index.php?pag=subastas&id=' . $id);
 	}

@@ -19,7 +19,7 @@
 			$query = query($sql);
 			foreach ($query as $row) {
 				echo '<tr>
-						<td><a href="?pag=subastas&id=' . $row['ID'] . '">' . $row['ARTICULO'] . '</a></td>
+						<td><a href="?pag=subastas&amp;id=' . $row['ID'] . '">' . $row['ARTICULO'] . '</a></td>
 						<td style="text-align: right">' . fdate($row['FECHA_INICIO'], true) . '</td>
 						<td style="text-align: right">' . fdate($row['FECHA_FIN'], true) . '</td>
 						<td style="text-align: right">' . $row['PRECIO_SALIDA'] . '</td>
@@ -48,7 +48,7 @@
 			$query = query($sql);
 			foreach ($query as $row) {
 				echo '<tr>
-						<td><a href="?pag=subastas&id=' . $row['ID'] . '">' . $row['ARTICULO'] . '</a></td>
+						<td><a href="?pag=subastas&amp;id=' . $row['ID'] . '">' . $row['ARTICULO'] . '</a></td>
 						<td>' . $row['NOMBRE'] . '</td>
 						<td style="text-align: right">' . fdate($row['FECHA_FIN'], true) . '</td>
 						<td style="text-align: right">' . $row['CANTIDAD'] . '</td>

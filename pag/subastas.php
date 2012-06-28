@@ -7,12 +7,14 @@
 	if (isset($_SESSION['action'])) {
 		if ($_SESSION['action'] == 'add')
 			echo '<div class="ok"><img src="img/icons/accept.png" />Subasta añadida</div>';
+		else if ($_SESSION['action'] == 'error')
+			echo '<div class="error"><img src="img/icons/error.png" />¡Error! Los datos introducidos son incorrectos</div>';
 		else
 			echo '<div class="ok"><img src="img/icons/accept.png" />Puja añadida</div>';
 		unset($_SESSION['action']);
 	}
 ?>
-<h1><img src="img/icons/bell.png" />Subastas 
+<h1><img src="img/icons/bell.png" alt="Subastas" />Subastas 
 <?php 
 	if (!isset($_GET['id']) && ($nivel == 'Encargado' || $nivel == 'Jefe' || $nivel == 'Director'))
 		include('inc/subastas/add.php');

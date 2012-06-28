@@ -4,18 +4,20 @@
 			WHERE id = {$_GET['id']}";
 	$query = query($sql);
 	foreach ($query as $row) {
-		echo '<img src="img/h1_sep.png" class="sep" /><img src="img/icons/bell.png" />';
+		echo '<img src="img/h1_sep.png" class="sep" alt="Imagen" /><img src="img/icons/bell.png" alt="Imagen" />';
 		echo $row['ARTICULO'];
-		if ($row['FECHA_FIN'] > date('d/m/y H:i:s,u') && ($nivel == 'Encargado' || $nivel == 'Jefe' || $nivel == 'Director'))
-			include('inc/subastas/bid.php');
-		else
+		if ($nivel == 'Encargado' || $nivel == 'Jefe' || $nivel == 'Director') {
+			echo '<a class="action" href="act/auction_del.php?id=' . $_GET['id'] . '"><img src="img/icons/delete.png" alt="Imagen" />Eliminar</a></h1>';
+			if ($row['FECHA_FIN'] > date('d/m/y H:i:s,u'))
+				include('inc/subastas/bid.php');
+		} else
 			echo '</h1>';
 ?>
 <div class="product">
 	<div class="head">
 		<div class="left">
 			<div class="image">
-				<img src="img/auct/<?php echo $row['ID']; ?>.png" />
+				<img src="img/auct/<?php echo $row['ID']; ?>.png" alt="Imagen" />
 			</div>
 			<h2><?php echo $row['ARTICULO']; ?></h2>
 			<div class="editor">
